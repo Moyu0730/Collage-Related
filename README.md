@@ -4,4 +4,4 @@
 
 1. Initialize Repository
 
-2. Finished Session 3
+2. Finished Session 4
