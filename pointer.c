@@ -55,13 +55,28 @@
 
 /* Session 3 : Pointer as Funciton Arguments - Call By Referencing */
 
-void Increment( int *p ){
-    *p = (*p) + 1;
-}
+// void Increment( int *p ){
+//     *p = (*p) + 1;
+// }
+
+// int main(){
+//     int a = 10;
+//     Increment(&a);
+
+//     printf("The Value of a is %d\n", a);
+// }
+
+/* Session 4 : Pointers and Arrays */
 
 int main(){
-    int a = 10;
-    Increment(&a);
+    int A[] = {2, 4, 5, 8, 1};
+    int i;
+    int *p = A;
 
-    printf("The Value of a is %d\n", a);
+    for( int i = 0 ; i < 5 ; i++ ){
+        printf("The Address of A[%d] is %d\n", i, &A[i]);
+        printf("The Address of A[%d] is %d\n", i, A+i);
+        printf("The Value of A[%d] is %d\n", i, A[i]);
+        printf("The Value of A[%d] is %d\n\n", i, *(A+i));
+    }
 }
