@@ -2,4 +2,6 @@
 
 # 2024. 05. 10
 
-Initialize Repository
+1. Initialize Repository
+
+2. Finished Session 3
