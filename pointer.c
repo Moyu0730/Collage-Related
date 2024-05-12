@@ -12,6 +12,7 @@
 //     printf("The Value at p is %d\n\n", *p);
     
 //     int b = 20;
+//     int c = 100;
 //     *p = b; // The ADDRESS of p WON'T change to b, but the VALUE WILL
 //     printf("The Address of p is %d\n", p);
 //     printf("The Value at p is %d\n\n", *p);
@@ -21,9 +22,8 @@
 //     printf("The Value at p is %d\n", *p);
 //     printf("The Size of Integer is %d bytes\n", sizeof(int));
 //     printf("The Address of p+1 is %d\n", p+1);
-//     printf("The Value of *p+1 is %d\n", *p+1); // Garbage Value
 //     printf("The Value of *(p+1) is %d\n", *(p+1)); // Garbage Value
-//     printf("The Value of *p+2 is %d\n", *p+2); // Garbage Value
+//     printf("The Address of p+2 is %d\n", p+2);
 //     printf("The Value of *(p+2) is %d\n", *(p+2)); // Garbage Value
 // }
 
@@ -68,15 +68,112 @@
 
 /* Session 4 : Pointers and Arrays */
 
-int main(){
-    int A[] = {2, 4, 5, 8, 1};
-    int i;
-    int *p = A;
+// int main(){
+//     int A[] = {2, 4, 5, 8, 1};
+//     int i;
+//     int *p = A;
 
-    for( int i = 0 ; i < 5 ; i++ ){
-        printf("The Address of A[%d] is %d\n", i, &A[i]);
-        printf("The Address of A[%d] is %d\n", i, A+i);
-        printf("The Value of A[%d] is %d\n", i, A[i]);
-        printf("The Value of A[%d] is %d\n\n", i, *(A+i));
-    }
-}
+//     for( int i = 0 ; i < 5 ; i++ ){
+//         printf("The Address of A[%d] is %d\n", i, &A[i]);
+//         printf("The Address of A[%d] is %d\n", i, A+i);
+//         printf("The Value of A[%d] is %d\n", i, A[i]);
+//         printf("The Value of A[%d] is %d\n\n", i, *(A+i));
+//     }
+// }
+
+/* Session 5 : Array as Function Arguements  */
+
+// int SumOfElements( int *A, int len ){ // Both [int* A] and [int A[]] is fine, they are the same
+//     int sum = 0;
+
+//     printf("In Sum Of Elements : The Size of A is %d, and the Size of A[0] is %d\n", sizeof(A), sizeof(A[0]));
+//     for( int i = 0 ; i < len ; i++ ) sum += A[i];
+
+//     return sum;
+// }
+
+// void DoubleTheValue( int *A, int len ){
+//     for( int i = 0 ; i < len ; i++ ) A[i] *= 2;
+// }
+
+// int main(){
+//     int A[] = {1, 2, 3, 4, 5};
+//     int len = sizeof(A) / sizeof(A[0]);
+//     int total = SumOfElements(A, len);
+//     printf("Sum of the Elements is %d\n", total);
+//     printf("In Main : The Size of A is %d, and the Size of A[0] is %d\n", sizeof(A), sizeof(A[0]));
+    
+//     for( int i = 0 ; i < len ; i++ ) printf("A[%d] is %d\n", i, A[i]);
+//     printf("\n");
+    
+//     DoubleTheValue(A, len);
+
+//     for( int i = 0 ; i < len ; i++ ) printf("A[%d] is %d\n", i, A[i]);
+// }
+
+/* Session 6 & 7 : Character Arrays And Pointers - Part A */
+// #include<string.h>
+
+// int main(){
+//     /* Invalid to declare C[4] for the string which len is equal to 4 */
+//     char C[4];
+//     C[0] = 'J';
+//     C[1] = 'O';
+//     C[2] = 'H';
+//     C[3] = 'N';
+//     printf("The Value of C is %s", C);
+
+//     /* Valid to declare a array longer greater than 4+1 for the string which len is equal to 4 */
+//     char C[20];
+//     C[0] = 'J';
+//     C[1] = 'O';
+//     C[2] = 'H';
+//     C[3] = 'N';
+//     C[4] = '\0'; // Don't forget to add a NULL char ('\0') at the end of the array
+//     int len = strlen(C);
+//     printf("The Value of C is %s\n", C);
+//     printf("The Size of C is %d bytes\n", sizeof(C));
+//     printf("The Length of C is %d\n", len); // The null character will not be implicated
+
+//     /* Another Way to initialize C string */
+//     // Valid
+//     char C[] = {'J', 'O', 'H', 'N', '\0'};
+    // char C[] = "Hello";
+    // printf("The Value of C is %s\n", C);
+
+//     // Invalid
+//     char C[10];
+//     C = "JOHN";
+//     C = {'J', 'O', 'H', 'N', '\0'};
+// }
+
+/* Session 6 & 7 : Character Arrays And Pointers - Part B */
+
+// void Print( char* C ){
+    // int i = 0 ;
+    // while( C[i] != '\0' ){
+    //     printf("%c", C[i]);
+    //     i++;
+    // }
+    // printf("\n");
+
+    /* Equivalence 1 */
+    // int i = 0 ;
+    // while( *(C+i) != '\0' ){
+    //     printf("%c", *(C+i));
+    //     i++;
+    // }
+    // printf("\n");
+
+    /* Equivalence 2 */
+    // while( *C != '\0' ){
+    //     printf("%c", *C);
+    //     C++;
+    // }
+    // printf("\n");
+// }
+
+// int main(){
+//     char C[20] = "Hello";
+//     Print(C);
+// }
