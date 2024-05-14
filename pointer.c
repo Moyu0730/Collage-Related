@@ -177,3 +177,48 @@
 //     char C[20] = "Hello";
 //     Print(C);
 // }
+
+/* Session 6 & 7 : Character Arrays And Pointers - Part C */
+
+int main(){
+    char c[20] = "Hello World"; // String gets stored in the space for array
+    char* p = "Hello World"; // String gets stored as compile time contants ( Type is int )
+
+    printf("The ASCII(int) Value of c[0] is %d\n", *(c+0));
+    printf("The ASCII(char) Value of c[0] is %c\n", *(c+0));
+    printf("The Address of c is %d\n\n", (c+0));
+
+    printf("The ASCII(int) Value of c[0] is %d\n", *(c+1));
+    printf("The ASCII(char) Value of c[0] is %c\n", *(c+1));
+    printf("The Address of c+1 is %d\n\n", (c+1));
+
+    printf("--------------------\n\n");
+
+    printf("The ASCII(int) Value of p is %d\n", *p); // ASCII
+    printf("The ASCII(char) Value of p is %c\n", *p); // Char   
+    printf("The Size of p is %d bytes\n", sizeof(p));
+    printf("The Address of p is %d\n\n", &p);
+
+    printf("The ASCII(int) Value of p+1 is %d\n", *(p+1)); // ASCII
+    printf("The ASCII(char) Value of p+1 is %c\n", *(p+1)); // Char   
+    printf("The Size of p+1 is %d bytes\n", sizeof(p+1));
+    printf("The Address of p+1 is %d\n\n", &p+1);
+
+    printf("--------------------\n\n");
+
+    printf("Valid Operaiton in Char Array and Char Pointer\n\n");
+
+    for( int i = 0 ; i < 11 ; i++ ) printf("%c", c[i]);
+    printf("\n");
+    for( int i = 0 ; i < 11 ; i++ ) printf("%c", p[i]);
+    printf("\n\n");
+
+    for( int i = 0 ; i < 11 ; i++ ) printf("%c", *(c+i));
+    printf("\n");
+    for( int i = 0 ; i < 11 ; i++ ) printf("%c", *(p+i));
+    printf("\n\n");
+
+    printf("Valid Operaiton ONLY in Char Pointer\n\n");
+    while( *p != '\0' ) printf("%c", *p++); // ONLY Pointer Support Arithmetic
+    printf("\n\n");
+}
