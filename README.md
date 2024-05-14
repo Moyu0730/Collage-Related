@@ -1,6 +1,10 @@
 # Collage-Related
 
-# 202. 05. 12
+# 2024. 05. 14
+
+1. Finish Session 6 & 7
+
+# 2024. 05. 12
 
 1. Finish Session 6
 
